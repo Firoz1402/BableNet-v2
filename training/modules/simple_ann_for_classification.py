@@ -22,7 +22,7 @@ class SimpleANN:
         self.loss_history = []
 
     def forward(self, inputs):
-        # Forward pass
+    
         self.hidden_output = np.dot(inputs, self.weights_input_hidden) + self.bias_input_hidden
         if self.activation == 'sigmoid':
             self.hidden_activation = sigmoid(self.hidden_output)
@@ -35,7 +35,7 @@ class SimpleANN:
         return self.output_probs
 
     def backward(self, inputs, targets, learning_rate):
-        # Backpropagation
+        
         batch_size = inputs.shape[0]
         d_output = self.output_probs - targets
         d_weights_hidden_output = np.dot(self.hidden_activation.T, d_output) / batch_size

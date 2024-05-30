@@ -20,7 +20,7 @@ with open('../models/english_to_hindi_translator/reverse_english_tokenizer_e2h.p
 with open('../models/english_to_hindi_translator/reverse_hindi_tokenizer_e2h.pkl', 'rb') as f:
     reverse_target_char_index = pickle.load(f)
 
-max_length_src = 20  # Set this to the maximum length used during training
+max_length_src = 20  
 latent_dim = 300
 num_decoder_tokens = len(target_token_index) + 1
 
