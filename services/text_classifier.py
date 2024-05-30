@@ -5,6 +5,8 @@ import re
 from modules.simple_ann_for_classification import SimpleANN, sigmoid, relu , softmax
 app = Flask(__name__)
 
+from flask_cors import CORS
+CORS(app)
 # Load the model
 def load_model(file_path):
     with open(file_path, 'rb') as file:

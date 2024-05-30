@@ -4,7 +4,8 @@ from PIL import Image
 import torch
 
 app = Flask(__name__)
-
+from flask_cors import CORS
+CORS(app)
 # Load the model and processor
 model = VisionEncoderDecoderModel.from_pretrained("../models/image_captioning/vit-gpt2-image-captioning")
 processor = ViTImageProcessor.from_pretrained("../models/image_captioning/vit-image-processor")

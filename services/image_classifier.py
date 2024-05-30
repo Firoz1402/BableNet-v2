@@ -2,9 +2,11 @@ from flask import Flask, request, jsonify
 import cv2
 import numpy as np
 import pickle
+
 from modules.simple_ann_for_classification import SimpleANN, sigmoid, relu , softmax
 app = Flask(__name__)
-
+from flask_cors import CORS
+CORS(app)
 # Load the trained model
 def load_model(filename):
     with open(filename, 'rb') as file:
